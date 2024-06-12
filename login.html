@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIPARY - Let's time Thailand</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .login-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 50px 20px;
+        }
+        .welcome {
+            max-width: 400px;
+            text-align: center;
+        }
+        .welcome img {
+            width: 100%;
+        }
+        .login-form {
+            max-width: 300px;
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-form .social-login {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+        .login-form .social-login button {
+            width: 48%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="pic/uplogo.jpg" alt="TRIPARY Logo" class="logo">
+       <nav>
+            <a href="index.html">HOME</a>
+            <a href="#">MEMBER</a>
+            <a href="#">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="login.html">LOGIN</a>
+        </nav>
+    </header>
+    <div class="login-container">
+        <div class="welcome">
+            <img src="pic/Logo.jpg" alt="Welcome Image">
+        </div>
+        <div class="login-form">
+            <form action="your-login-endpoint" method="post">
+                <input type="email" name="email" placeholder="name@email.com" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <div>
+                    <input type="checkbox" name="remember-me" > Remember me
+                </div>
+                <button type="submit">Sign in</button>
+                <div>
+                    <a href="#">Don't have an account? Sign up</a>
+                </div>
+                <div class="social-login">
+                    <button>Continue with Google</button>
+                    <button>Continue with Twitter</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

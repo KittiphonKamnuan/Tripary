@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIPARY - Let's time Thailand</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <img src="pic/uplogo.jpg" alt="TRIPARY Logo" class="logo">
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="#">MEMBER</a>
+            <a href="#">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="login.html">LOGIN</a>
+        </nav>
+    </header>
+    <div class="hero">
+        <h1>Let's go Thailand</h1>
+        <div class="search-container">
+            <input type="text" placeholder="Search" >
+        <!-- <button type="button"><img src="pic/search_icon.png" alt="Search Icon"></button> -->
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="sidebar">
+            <button class="sidebar-button active" onclick="selectTab('make-trip')">Make your trip</button>
+            <button class="sidebar-button" onclick="selectTab('destination')">Destination</button>
+            <button class="sidebar-button" onclick="selectTab('holiday-packages')">Holiday packages</button>
+            <button class="sidebar-button" onclick="selectTab('promotion')">Promotion</button>
+        </div>
+        <div class="content">
+            <div id="make-trip" class="tab-content active">
+                <div class="card">
+                    <img src="pic/hotel.jpeg" alt="Hotel">
+                    <div class="card-info">
+                        <h3>Hotel</h3>
+                        <p>$150 <button><img src="pic/shop.png" alt="shop"> Add</button></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="pic/restaurant.jpg" alt="Restaurant">
+                    <div class="card-info">
+                        <h3>Restaurants</h3>
+                        <p>$12.33 <button><img src="pic/shop.png" alt="shop"> Add</button></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="pic/market.jpg" alt="Market">
+                    <div class="card-info">
+                        <h3>Market</h3>
+                        <p>$1.50 <button><img src="pic/shop.png" alt="shop"> Add</button></p>
+                    </div>
+                </div>
+            </div>
+            <div id="destination" class="tab-content">
+                <div class="card">
+                    <img src="pic/wat_phra_kaew.jpg" alt="Wat Phra Kaew">
+                    <div class="card-info">
+                        <h3>Wat Phra Kaew</h3>
+                        <p>15.7 km</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="pic/china_town_bangkok.jpg" alt="China Town Bangkok">
+                    <div class="card-info">
+                        <h3>China Town Bangkok</h3>
+                        <p>5.4 km</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="pic/chao_phraya_river.jpg" alt="Chao Phraya River">
+                    <div class="card-info">
+                        <h3>Chao Phraya River</h3>
+                        <p>12.3 km</p>
+                    </div>
+                </div>
+            </div>
+            <div id="holiday-packages" class="tab-content">
+                <div class="card">
+                    <img src="pic/songkran-festival-phuket.jpg" alt="Songkran Festival">
+                    <div class="card-info">
+                        <h3>Songkran Festival</h3>
+                        <p>13-15 April 2024</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="pic/Loy-Krathong-Festival.jpg" alt="Loy Krathong Festival">
+                    <div class="card-info">
+                        <h3>Loy Krathong Festival</h3>
+                        <p>15 November 2024</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="pic/Phi-ta-khon-2-copy-scaled-Large.jpeg" alt="Phi Ta Khon">
+                    <div class="card-info">
+                        <h3>Phi Ta Khon</h3>
+                        <p>7-9 July 2024</p>
+                    </div>
+                </div>
+            </div>
+            <div id="promotion" class="tab-content">
+                <div class="card">
+                    <img src="pic/NakhonPathom.jpeg" alt="Nakhon Pathom">
+                    <div class="card-info">
+                        <h3>Nakhon Pathom</h3>
+                        <button>900$</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="pic/bangkok.jpg" alt="Bangkok">
+                    <div class="card-info">
+                        <h3>Bangkok</h3>
+                        <button>1200$</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
