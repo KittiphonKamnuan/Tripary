@@ -213,11 +213,59 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js"></script>
 <script>
     $(document).ready(function() {
+        // Check if tripDetails exists in localStorage
+        const tripDetails = JSON.parse(localStorage.getItem('tripDetails'));
+        if (tripDetails) {
+            // Fill form fields with localStorage data
+            document.getElementById('numPeople').value = tripDetails.numPeople;
+            document.getElementById('startDate').value = tripDetails.startDate;
+            document.getElementById('endDate').value = tripDetails// endDate;
+            document.getElementById('budget').value = tripDetails.budget;
+            document.getElementById('province').value = tripDetails.province;
+        }
+
+        // Datepicker initialization
         $('.datepicker-here').datepicker({
-            dateFormat: 'yyyy-mm-dd',
             language: 'en',
-            minDate: new Date()  // Set minimum date to today
+            dateFormat: 'yyyy-mm-dd'
         });
+
+        // Function to adjust budget
+        function adjustBudget(amount, operation) {
+            let budgetInput = document.getElementById('budget');
+            let currentBudget = parseInt(budgetInput.value) || 0;
+            if (operation === '-') {
+                currentBudget -= amount;
+            } else if (operation === '+') {
+                currentBudget += amount;
+            }
+            if (currentBudget < 0) {
+                currentBudget = 0;
+            }
+            budgetInput.value = currentBudget;
+        }
+
+        // Function to select category
+        function selectCategory(category) {
+            document.getElementById('customCategory').value = '';
+            document.getElementById('category').value = category;
+        }
+
+        // Function to suggest province based on input
+        function suggestProvince(input) {
+            let datalist = document.getElementById('provinceList');
+            let options = datalist.getElementsByTagName('option');
+            let found = false;
+            for (let i = 0; i < options.length; i++) {
+                if (input.toLowerCase() === options[i].value.toLowerCase()) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                document.getElementById('province').value = '';
+            }
+        }
     });
 
     document.getElementById('tripForm').addEventListener('submit', function(event) {
