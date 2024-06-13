@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Trip Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        main h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .trip-details {
+            margin-bottom: 20px;
+        }
+        .trip-details label {
+            font-weight: bold;
+            color: #333;
+        }
+        .trip-details p {
+            margin: 5px 0;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="pic/uplogo.jpg" alt="TRIPARY Logo" class="logo">
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="#">MEMBER</a>
+            <a href="#">ABOUT</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="login.html">LOGIN</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Your Trip Details</h1>
+        <div class="trip-details">
+            <label for="numPeople">Number of People:</label>
+            <p id="numPeople"></p>
+
+            <label for="startDate">Start Date:</label>
+            <p id="startDate"></p>
+
+            <label for="endDate">End Date:</label>
+            <p id="endDate"></p>
+
+            <label for="budget">Budget:</label>
+            <p id="budget"></p>
+
+            <label for="category">Category:</label>
+            <p id="category"></p>
+
+            <label for="province">Province:</label>
+            <p id="province"></p>
+        </div>
+        <div class="back-link">
+            <a href="trip.html">&larr; Back to Trip Form</a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve data from localStorage
+            const tripDetails = JSON.parse(localStorage.getItem('tripDetails'));
+
+            // Display trip details
+            document.getElementById('numPeople').textContent = tripDetails.numPeople;
+            document.getElementById('startDate').textContent = tripDetails.startDate;
+            document.getElementById('endDate').textContent = tripDetails.endDate;
+            document.getElementById('budget').textContent = tripDetails.budget;
+            document.getElementById('category').textContent = tripDetails.category;
+            document.getElementById('province').textContent = tripDetails.province;
+        });
+    </script>
+</body>
+</html>

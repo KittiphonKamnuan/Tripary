@@ -87,7 +87,7 @@
 
     <main>
         <h1>Plan Your Trip</h1>
-        <form id="tripForm" action="/submit-trip" method="POST">
+        <form id="tripForm" action="make_trip.html" method="POST">
             <label for="numPeople">Number of People:</label>
             <input type="number" id="numPeople" name="numPeople" required>
 
@@ -139,169 +139,175 @@
                 </optgroup>
                 <optgroup label="Northeastern Region">
                     <option value="Kalasin">
-                    <option value="Khon Kaen">
-                    <option value="Chaiyaphum">
-                    <option value="Nakhon Phanom">
-                    <option value="Nakhon Ratchasima">
-                    <option value="Buriram">
-                    <option value="Maha Sarakham">
-                    <option value="Mukdahan">
-                    <option value="Yasothon">
-                    <option value="Roi Et">
-                    <option value="Loei">
-                    <option value="Sakon Nakhon">
-                    <option value="Nong Khai">
-                    <option value="Nong Bua Lamphu">
-                    <option value="Udon Thani">
-                    <option value="Amnat Charoen">
-                </optgroup>
-                <optgroup label="Central Region">
-                    <option value="Bangkok">
-                    <option value="Uthai Thani">
-                    <option value="Chai Nat">
-                    <option value="Nakhon Sawan">
-                    <option value="Nonthaburi">
-                    <option value="Pathum Thani">
-                    <option value="Ayutthaya">
-                    <option value="Lopburi">
-                    <option value="Samut Prakan">
-                    <option value="Samut Songkhram">
-                    <option value="Samut Sakhon">
-                    <option value="Saraburi">
-                    <option value="Sing Buri">
-                    <option value="Ang Thong">
-                </optgroup>
-                <optgroup label="Eastern Region">
-                    <option value="Chon Buri">
-                    <option value="Rayong">
-                    <option value="Chanthaburi">
-                    <option value="Trat">
-                    <option value="Nakhon Nayok">
-                    <option value="Chachoengsao">
-                    <option value="Prachin Buri">
-                    <option value="Sa Kaeo">
-                </optgroup>
-                <optgroup label="Western Region">
-                    <option value="Kanchanaburi">
-                    <option value="Prachuap Khiri Khan">
-                    <option value="Suphan Buri">
-                    <option value="Phetchaburi">
-                    <option value="Nakhon Pathom">
-                    <option value="Ratchaburi">
-                </optgroup>
-                <optgroup label="Southern Region">
-                    <option value="Krabi">
-                    <option value="Chumphon">
-                    <option value="Trang">
-                    <option value="Nakhon Si Thammarat">
-                    <option value="Narathiwat">
-                    <option value="Pattani">
-                    <option value="Phang Nga">
-                    <option value="Phatthalung">
-                    <option value="Phuket">
-                    <option value="Yala">
-                    <option value="Ranong">
-                    <option value="Songkhla">
-                    <option value="Satun">
-                    <option value="Surat Thani">
-                </optgroup>
-            </datalist>
-                <button type="submit">Submit</button>
-            </form>
-        </main>
-    
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('.datepicker-here').datepicker({
-                    dateFormat: 'yyyy-mm-dd',
-                    language: 'en',
-                    minDate: new Date()  // Set minimum date to today
-                });
+                    <option value="KhonKaen">
+<option value="Chaiyaphum">
+<option value="Nakhon Phanom">
+<option value="Nakhon Ratchasima">
+<option value="Buriram">
+<option value="Maha Sarakham">
+<option value="Mukdahan">
+<option value="Yasothon">
+<option value="Roi Et">
+<option value="Loei">
+<option value="Sakon Nakhon">
+<option value="Nong Khai">
+<option value="Nong Bua Lamphu">
+<option value="Udon Thani">
+<option value="Amnat Charoen">
+</optgroup>
+<optgroup label="Central Region">
+<option value="Bangkok">
+<option value="Uthai Thani">
+<option value="Chai Nat">
+<option value="Nakhon Sawan">
+<option value="Nonthaburi">
+<option value="Pathum Thani">
+<option value="Ayutthaya">
+<option value="Lopburi">
+<option value="Samut Prakan">
+<option value="Samut Songkhram">
+<option value="Samut Sakhon">
+<option value="Saraburi">
+<option value="Sing Buri">
+<option value="Ang Thong">
+</optgroup>
+<optgroup label="Eastern Region">
+<option value="Chon Buri">
+<option value="Rayong">
+<option value="Chanthaburi">
+<option value="Trat">
+<option value="Nakhon Nayok">
+<option value="Chachoengsao">
+<option value="Prachin Buri">
+<option value="Sa Kaeo">
+</optgroup>
+<optgroup label="Western Region">
+<option value="Kanchanaburi">
+<option value="Prachuap Khiri Khan">
+<option value="Suphan Buri">
+<option value="Phetchaburi">
+<option value="Nakhon Pathom">
+<option value="Ratchaburi">
+</optgroup>
+<optgroup label="Southern Region">
+<option value="Krabi">
+<option value="Chumphon">
+<option value="Trang">
+<option value="Nakhon Si Thammarat">
+<option value="Narathiwat">
+<option value="Pattani">
+<option value="Phang Nga">
+<option value="Phatthalung">
+<option value="Phuket">
+<option value="Yala">
+<option value="Ranong">
+<option value="Songkhla">
+<option value="Satun">
+<option value="Surat Thani">
+</optgroup>
+</datalist>
+<button type="submit">Submit</button>
+</form>
+</main>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.datepicker-here').datepicker({
+            dateFormat: 'yyyy-mm-dd',
+            language: 'en',
+            minDate: new Date()  // Set minimum date to today
+        });
+    });
+
+    document.getElementById('tripForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        validateForm();
+    });
+
+    function selectCategory(category) {
+        document.getElementById('customCategory').value = category;
+    }
+
+    function adjustBudget(amount, operation) {
+        let budgetInput = document.getElementById('budget');
+        let currentBudget = parseInt(budgetInput.value);
+
+        if (operation === '+') {
+            currentBudget += amount;
+        } else {
+            if (currentBudget >= amount) {
+                currentBudget -= amount;
+            } else {
+                alert('Budget cannot be negative.');
+                return;
+            }
+        }
+
+        budgetInput.value = currentBudget;
+    }
+
+    function suggestProvince(input) {
+        let datalist = document.getElementById('provinceList');
+        datalist.innerHTML = '';
+
+        const provincesByRegion = {
+            "ภาคเหนือ": ["Chiang Mai", "Mae Hong Son", "Chiang Rai", "Lamphun", "Lampang", "Phayao", "Phrae", "Nan", "Uttaradit", "Tak", "Sukhothai", "Phitsanulok", "Kamphaeng Phet", "Phetchabun"],
+            "ภาคตะวันออกเฉียงเหนือ": ["Kalasin", "Khon Kaen", "Chaiyaphum", "Nakhon Phanom", "Nakhon Ratchasima", "Buriram", "Maha Sarakham", "Mukdahan", "Yasothon", "Roi Et", "Loei", "Sakon Nakhon", "Nong Khai", "Nong Bua Lamphu", "Udon Thani", "Amnat Charoen"],
+            "ภาคกลาง": ["Bangkok", "Uthai Thani", "Chai Nat", "Nakhon Sawan", "Nonthaburi", "Pathum Thani", "Ayutthaya", "Lopburi", "Samut Prakan", "Samut Songkhram", "Samut Sakhon", "Saraburi", "Sing Buri", "Ang Thong"],
+            "ภาคตะวันออก": ["Chon Buri", "Rayong", "Chanthaburi", "Trat", "Nakhon Nayok", "Chachoengsao", "Prachin Buri", "Sa Kaeo"],
+            "ภาคตะวันตก": ["Kanchanaburi", "Prachuap Khiri Khan", "Suphan Buri", "Phetchaburi", "Nakhon Pathom", "Ratchaburi"],
+            "ภาคใต้": ["Krabi", "Chumphon", "Trang", "Nakhon Si Thammarat", "Narathiwat", "Pattani", "Phang Nga", "Phatthalung", "Phuket", "Yala", "Ranong", "Songkhla", "Satun", "Surat Thani"]
+        };                
+
+        Object.keys(provincesByRegion).forEach(region => {
+            provincesByRegion[region].forEach(province => {
+                if (province.includes(input)) {
+                    let option = document.createElement('option');
+                    option.value = province;
+                    datalist.appendChild(option);
+                }
             });
-    
-            document.getElementById('tripForm').addEventListener('submit', function(event) {
-                event.preventDefault();
-                validateForm();
-            });
-    
-            function selectCategory(category) {
-                document.getElementById('customCategory').value = category;
-            }
-    
-            function adjustBudget(amount, operation) {
-                let budgetInput = document.getElementById('budget');
-                let currentBudget = parseInt(budgetInput.value);
-    
-                if (operation === '+') {
-                    currentBudget += amount;
-                } else {
-                    if (currentBudget >= amount) {
-                        currentBudget -= amount;
-                    } else {
-                        alert('Budget cannot be negative.');
-                        return;
-                    }
-                }
-    
-                budgetInput.value = currentBudget;
-            }
-    
-            function suggestProvince(input) {
-                let datalist = document.getElementById('provinceList');
-                datalist.innerHTML = '';
-    
-                const provincesByRegion = {
-                    "ภาคเหนือ": ["Chiang Mai", "Mae Hong Son", "Chiang Rai", "Lamphun", "Lampang", "Phayao", "Phrae", "Nan", "Uttaradit", "Tak", "Sukhothai", "Phitsanulok", "Kamphaeng Phet", "Phetchabun"],
-                    "ภาคตะวันออกเฉียงเหนือ": ["Kalasin", "Khon Kaen", "Chaiyaphum", "Nakhon Phanom", "Nakhon Ratchasima", "Buriram", "Maha Sarakham", "Mukdahan", "Yasothon", "Roi Et", "Loei", "Sakon Nakhon", "Nong Khai", "Nong Bua Lamphu", "Udon Thani", "Amnat Charoen"],
-                    "ภาคกลาง": ["Bangkok", "Uthai Thani", "Chai Nat", "Nakhon Sawan", "Nonthaburi", "Pathum Thani", "Ayutthaya", "Lopburi", "Samut Prakan", "Samut Songkhram", "Samut Sakhon", "Saraburi", "Sing Buri", "Ang Thong"],
-                    "ภาคตะวันออก": ["Chon Buri", "Rayong", "Chanthaburi", "Trat", "Nakhon Nayok", "Chachoengsao", "Prachin Buri", "Sa Kaeo"],
-                    "ภาคตะวันตก": ["Kanchanaburi", "Prachuap Khiri Khan", "Suphan Buri", "Phetchaburi", "Nakhon Pathom", "Ratchaburi"],
-                    "ภาคใต้": ["Krabi", "Chumphon", "Trang", "Nakhon Si Thammarat", "Narathiwat", "Pattani", "Phang Nga", "Phatthalung", "Phuket", "Yala", "Ranong", "Songkhla", "Satun", "Surat Thani"]
-                };                
-    
-                provinces.forEach(province => {
-                    if (province.includes(input)) {
-                        let option = document.createElement('option');
-                        option.value = province;
-                        datalist.appendChild(option);
-                    }
-                });
-            }
-    
-            function validateForm() {
-                const numPeople = document.getElementById('numPeople').value;
-                const startDate = document.getElementById('startDate').value;
-                const endDate = document.getElementById('endDate').value;
-                const budget = document.getElementById('budget').value;
-                const category = document.getElementById('customCategory').value;
-                const province = document.getElementById('province').value;
-    
-                if (!numPeople || !startDate || !endDate || !budget || !category || !province) {
-                    alert('Please fill in all the fields.');
-                    return;
-                }
-    
-                // Convert budget to a number
-                const budgetValue = parseInt(budget);
-    
-                // Validate if End Date is not earlier than Start Date
-                if (new Date(endDate) < new Date(startDate)) {
-                    alert('End Date cannot be earlier than Start Date.');
-                    return;
-                }
-    
-                alert(`Trip Details:
-    Number of People: ${numPeople}
-    Start Date: ${startDate}
-    End Date: ${endDate}
-    Budget: ${budgetValue}
-    Category: ${category}
-    Province: ${province}`);
-    
-                console.log({ numPeople, startDate, endDate, budget: budgetValue, category, province });
-            }
-        </script>
-    </body>
-    </html>
+        });
+    }
+
+    function validateForm() {
+        const numPeople = document.getElementById('numPeople').value;
+        const startDate = document.getElementById('startDate').value;
+        const endDate = document.getElementById('endDate').value;
+        const budget = document.getElementById('budget').value;
+        const category = document.getElementById('customCategory').value;
+        const province = document.getElementById('province').value;
+
+        if (!numPeople || !startDate || !endDate || !budget || !category || !province) {
+            alert('Please fill in all the fields.');
+            return;
+        }
+
+        // Convert budget to a number
+        const budgetValue = parseInt(budget);
+
+        // Validate if End Date is not earlier than Start Date
+        if (new Date(endDate) < new Date(startDate)) {
+            alert('End Date cannot be earlier than Start Date.');
+            return;
+        }
+
+        // Store trip details in localStorage
+        const tripDetails = {
+            numPeople,
+            startDate,
+            endDate,
+            budget: budgetValue,
+            category,
+            province
+        };
+
+        localStorage.setItem('tripDetails', JSON.stringify(tripDetails));
+
+        // Redirect to make_trip.html
+        window.location.href = 'make_trip.html';
+    }
+</script>
+</body>
+</html>
