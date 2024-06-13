@@ -3,8 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRIPARY - Let's time Thailand</title>
+    <title>TRIPARY - Contact Us</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            flex-direction: column;
+        }
+        .contact-form {
+            max-width: 600px;
+            width: 100%;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+        .contact-form h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            resize: none; /* Prevent textarea from being resized */
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .thank-you-message {
+            display: none;
+            text-align: center;
+        }
+        @media screen and (max-width: 600px) {
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 14px; /* Adjust font size for smaller screens */
+            }
+            .contact-form {
+                max-width: 400px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -17,20 +71,26 @@
             <a href="login.html">LOGIN</a>
         </nav>
     </header>
-    <div class="hero">
-        
-    </div>
-    <div class="main-content">
-        <div class="sidebar">
-            <button class="sidebar-button active" onclick="selectTab('make-trip')">Make your trip</button>
-            <button class="sidebar-button" onclick="selectTab('destination')">Destination</button>
-            <button class="sidebar-button" onclick="selectTab('holiday-packages')">Holiday packages</button>
-            <button class="sidebar-button" onclick="selectTab('promotion')">Promotion</button>
+    <div class="contact-container">
+        <form class="contact-form" onsubmit="showThankYouMessage(event)">
+            <h2>Contact Us</h2>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div class="thank-you-message">
+            <h2>Thank You!</h2>
+            <p>Your message has been sent successfully. We will get back to you shortly.</p>
         </div>
-        <div class="content">
-            
-        </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        function showThankYouMessage(event) {
+            event.preventDefault();
+            document.querySelector('.contact-form').style.display = 'none';
+            document.querySelector('.thank-you-message').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
