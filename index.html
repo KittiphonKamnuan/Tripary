@@ -5,6 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TRIPARY - Let's time Thailand</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .cart {
+            position: fixed;
+            right: 20px;
+            top: 100px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: none;
+            padding: 20px;
+        }
+        .cart-header {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .cart-footer {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -22,7 +50,6 @@
         <h1>Let's go Thailand</h1>
         <div class="search-container">
             <input type="text" placeholder="Search" >
-        <!-- <button type="button"><img src="pic/search_icon.png" alt="Search Icon"></button> -->
         </div>
     </div>
     <div class="main-content">
@@ -38,21 +65,21 @@
                     <img src="pic/hotel.jpeg" alt="Hotel">
                     <div class="card-info">
                         <h3>Hotel</h3>
-                        <p>$150 <button><img src="pic/shop.png" alt="shop"> Add</button></p>
+                        <p>$150 <button onclick="addToCart('Hotel', 150)"><img src="pic/shop.png" alt="shop"> Add</button></p>
                     </div>
                 </div>
                 <div class="card">
                     <img src="pic/restaurant.jpg" alt="Restaurant">
                     <div class="card-info">
                         <h3>Restaurants</h3>
-                        <p>$12.33 <button><img src="pic/shop.png" alt="shop"> Add</button></p>
+                        <p>$12.33 <button onclick="addToCart('Restaurants', 12.33)"><img src="pic/shop.png" alt="shop"> Add</button></p>
                     </div>
                 </div>
                 <div class="card">
                     <img src="pic/market.jpg" alt="Market">
                     <div class="card-info">
                         <h3>Market</h3>
-                        <p>$1.50 <button><img src="pic/shop.png" alt="shop"> Add</button></p>
+                        <p>$1.50 <button onclick="addToCart('Market', 1.50)"><img src="pic/shop.png" alt="shop"> Add</button></p>
                     </div>
                 </div>
             </div>
@@ -107,19 +134,54 @@
                     <img src="pic/NakhonPathom.jpeg" alt="Nakhon Pathom">
                     <div class="card-info">
                         <h3>Nakhon Pathom</h3>
-                        <button>900$</button>
+                        <button onclick="addToCart('Nakhon Pathom', 900)">900$</button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="pic/bangkok.jpg" alt="Bangkok">
                     <div class="card-info">
                         <h3>Bangkok</h3>
-                        <button>1200$</button>
+                        <button onclick="addToCart('Bangkok', 1200)">1200$</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="cart" id="cart">
+        <div class="cart-header">Shopping Cart</div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer" id="cart-total">Total: $0.00</div>
+    </div>
+    <script>
+        const cart = [];
+        function addToCart(item, price) {
+            cart.push({ item, price });
+            displayCart();
+        }
+
+        function displayCart() {
+            const cartContainer = document.getElementById('cart');
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+
+            cartItems.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(cartItem => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'cart-item';
+                itemElement.innerHTML = `
+                    <span>${cartItem.item}</span>
+                    <span>$${cartItem.price.toFixed(2)}</span>
+                `;
+                cartItems.appendChild(itemElement);
+                total += cartItem.price;
+            });
+
+            cartTotal.innerText = `Total: $${total.toFixed(2)}`;
+            cartContainer.style.display = 'block';
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
