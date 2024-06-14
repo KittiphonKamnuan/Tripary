@@ -24,13 +24,33 @@
             margin-bottom: 10px;
         }
         .cart-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .cart-item span {
+            padding: 5px;
         }
         .cart-footer {
             text-align: center;
             font-weight: bold;
+            margin-top: 10px;
+        }
+        .cart button{
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 5px 15px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -47,7 +67,7 @@
         </nav>
     </header>
     <div class="hero">
-        <h1>Let's go Thailand</h1>
+        <h1>Let's time Thailand</h1>
         <div class="search-container">
             <input type="text" placeholder="Search" >
         </div>
@@ -65,21 +85,39 @@
                     <img src="pic/hotel.jpeg" alt="Hotel">
                     <div class="card-info">
                         <h3>Hotel</h3>
-                        <p>$150 <button onclick="addToCart('Hotel', 150)"><img src="pic/shop.png" alt="shop"> Add</button></p>
+                        <p>
+                            <h4>People</h4>
+                            <input type="number" placeholder="People" id="hotel-people" min="1" value="1">
+                            <h4>Night</h4>
+                            <input type="number" placeholder="Duration (days)" id="hotel-duration" min="1" value="1">
+                        </p>
+                        <p>$150 <button onclick="addToCart('Hotel', 150, document.getElementById('hotel-people').value, document.getElementById('hotel-duration').value)"><img src="pic/shop.png" alt="shop"> Add</button></p>
                     </div>
                 </div>
                 <div class="card">
                     <img src="pic/restaurant.jpg" alt="Restaurant">
                     <div class="card-info">
                         <h3>Restaurants</h3>
-                        <p>$12.33 <button onclick="addToCart('Restaurants', 12.33)"><img src="pic/shop.png" alt="shop"> Add</button></p>
+                        <p>
+                            <h4>People</h4>
+                            <input type="number" placeholder="People" id="restaurant-people" min="1" value="1">
+                            <h4>Night</h4>
+                            <input type="number" placeholder="Duration (days)" id="restaurant-duration" min="1" value="1">
+                        </p>
+                        <p>$12.33 <button onclick="addToCart('Restaurants', 12.33, document.getElementById('restaurant-people').value, document.getElementById('restaurant-duration').value)"><img src="pic/shop.png" alt="shop"> Add</button></p>
                     </div>
                 </div>
                 <div class="card">
                     <img src="pic/market.jpg" alt="Market">
                     <div class="card-info">
                         <h3>Market</h3>
-                        <p>$1.50 <button onclick="addToCart('Market', 1.50)"><img src="pic/shop.png" alt="shop"> Add</button></p>
+                        <p>
+                            <h4>People</h4>
+                            <input type="number" placeholder="People" id="market-people" min="1" value="1">
+                            <h4>Night</h4>
+                            <input type="number" placeholder="Duration (days)" id="market-duration" min="1" value="1">
+                        </p>
+                        <p>$1.50 <button onclick="addToCart('Market', 1.50, document.getElementById('market-people').value, document.getElementById('market-duration').value)"><img src="pic/shop.png" alt="shop"> Add</button></p>
                     </div>
                 </div>
             </div>
@@ -134,14 +172,14 @@
                     <img src="pic/NakhonPathom.jpeg" alt="Nakhon Pathom">
                     <div class="card-info">
                         <h3>Nakhon Pathom</h3>
-                        <button onclick="addToCart('Nakhon Pathom', 900)">900$</button>
+                        <button onclick="addToCart('Nakhon Pathom', 900, 1, 1)">900$</button>
                     </div>
                 </div>
                 <div class="card">
                     <img src="pic/bangkok.jpg" alt="Bangkok">
                     <div class="card-info">
                         <h3>Bangkok</h3>
-                        <button onclick="addToCart('Bangkok', 1200)">1200$</button>
+                        <button onclick="addToCart('Bangkok', 1200, 1, 1)">1200$</button>
                     </div>
                 </div>
             </div>
@@ -151,11 +189,13 @@
         <div class="cart-header">Shopping Cart</div>
         <div class="cart-items" id="cart-items"></div>
         <div class="cart-footer" id="cart-total">Total: $0.00</div>
+        <button onclick="placeOrder()" >Place Order</button>
     </div>
     <script>
         const cart = [];
-        function addToCart(item, price) {
-            cart.push({ item, price });
+        function addToCart(item, price, people, duration) {
+            const totalPrice = price * people * duration;
+            cart.push({ item, price: totalPrice, people, duration });
             displayCart();
         }
 
@@ -167,11 +207,23 @@
             cartItems.innerHTML = '';
             let total = 0;
 
+            const headerElement = document.createElement('div');
+            headerElement.className = 'cart-item';
+            headerElement.innerHTML = `
+                <span>Category</span>
+                <span>People</span>
+                <span>Night</span>
+                <span>Total</span>
+            `;
+            cartItems.appendChild(headerElement);
+
             cart.forEach(cartItem => {
                 const itemElement = document.createElement('div');
                 itemElement.className = 'cart-item';
                 itemElement.innerHTML = `
                     <span>${cartItem.item}</span>
+                    <span>${cartItem.people}</span>
+                    <span>${cartItem.duration}</span>
                     <span>$${cartItem.price.toFixed(2)}</span>
                 `;
                 cartItems.appendChild(itemElement);
@@ -180,6 +232,10 @@
 
             cartTotal.innerText = `Total: $${total.toFixed(2)}`;
             cartContainer.style.display = 'block';
+        }
+
+        function placeOrder() {
+            window.location.href = 'purchase.html';
         }
     </script>
     <script src="script.js"></script>

@@ -159,6 +159,11 @@ body {
 
 .card-info h3 {
     margin: 0 0 10px 0;
+    margin-bottom: -20px;
+}
+
+.card-info h4 {
+    margin: 10px 0 5px 0;
 }
 
 .card-info p {
